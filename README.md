@@ -1,2 +1,2 @@
-# ThePrince-of-Tabletennis
+# The Prince of Tabletennis
 Tabletennis mobile game.
