@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D354E7981D0063F10066A718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354E7971D0063F10066A718 /* AppDelegate.swift */; };
+		D354E79C1D0063F10066A718 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354E79B1D0063F10066A718 /* GameScene.swift */; };
+		D354E79E1D0063F10066A718 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354E79D1D0063F10066A718 /* GameViewController.swift */; };
+		D354E7A11D0063F10066A718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D354E79F1D0063F10066A718 /* Main.storyboard */; };
+		D354E7A31D0063F10066A718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D354E7A21D0063F10066A718 /* Assets.xcassets */; };
+		D354E7A61D0063F10066A718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D354E7A41D0063F10066A718 /* LaunchScreen.storyboard */; };
+		D354E7B11D0063F20066A718 /* ThePrince_of_TabletennisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354E7B01D0063F20066A718 /* ThePrince_of_TabletennisTests.swift */; };
+		D354E7BC1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354E7BB1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D354E7AD1D0063F20066A718 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D354E78C1D0063F10066A718 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D354E7931D0063F10066A718;
+			remoteInfo = "ThePrince-of-Tabletennis";
+		};
+		D354E7B81D0063F20066A718 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D354E78C1D0063F10066A718 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D354E7931D0063F10066A718;
+			remoteInfo = "ThePrince-of-Tabletennis";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D354E7941D0063F10066A718 /* ThePrince-of-Tabletennis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ThePrince-of-Tabletennis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354E7971D0063F10066A718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D354E79B1D0063F10066A718 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D354E79D1D0063F10066A718 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D354E7A01D0063F10066A718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D354E7A21D0063F10066A718 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D354E7A51D0063F10066A718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D354E7A71D0063F10066A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D354E7AC1D0063F20066A718 /* ThePrince-of-TabletennisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ThePrince-of-TabletennisTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354E7B01D0063F20066A718 /* ThePrince_of_TabletennisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThePrince_of_TabletennisTests.swift; sourceTree = "<group>"; };
+		D354E7B21D0063F20066A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D354E7B71D0063F20066A718 /* ThePrince-of-TabletennisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ThePrince-of-TabletennisUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354E7BB1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThePrince_of_TabletennisUITests.swift; sourceTree = "<group>"; };
+		D354E7BD1D0063F20066A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D354E7911D0063F10066A718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D354E7A91D0063F20066A718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D354E7B41D0063F20066A718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D354E78B1D0063F10066A718 = {
+			isa = PBXGroup;
+			children = (
+				D354E7961D0063F10066A718 /* ThePrince-of-Tabletennis */,
+				D354E7AF1D0063F20066A718 /* ThePrince-of-TabletennisTests */,
+				D354E7BA1D0063F20066A718 /* ThePrince-of-TabletennisUITests */,
+				D354E7951D0063F10066A718 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D354E7951D0063F10066A718 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D354E7941D0063F10066A718 /* ThePrince-of-Tabletennis.app */,
+				D354E7AC1D0063F20066A718 /* ThePrince-of-TabletennisTests.xctest */,
+				D354E7B71D0063F20066A718 /* ThePrince-of-TabletennisUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D354E7961D0063F10066A718 /* ThePrince-of-Tabletennis */ = {
+			isa = PBXGroup;
+			children = (
+				D354E7971D0063F10066A718 /* AppDelegate.swift */,
+				D354E79B1D0063F10066A718 /* GameScene.swift */,
+				D354E79D1D0063F10066A718 /* GameViewController.swift */,
+				D354E79F1D0063F10066A718 /* Main.storyboard */,
+				D354E7A21D0063F10066A718 /* Assets.xcassets */,
+				D354E7A41D0063F10066A718 /* LaunchScreen.storyboard */,
+				D354E7A71D0063F10066A718 /* Info.plist */,
+			);
+			path = "ThePrince-of-Tabletennis";
+			sourceTree = "<group>";
+		};
+		D354E7AF1D0063F20066A718 /* ThePrince-of-TabletennisTests */ = {
+			isa = PBXGroup;
+			children = (
+				D354E7B01D0063F20066A718 /* ThePrince_of_TabletennisTests.swift */,
+				D354E7B21D0063F20066A718 /* Info.plist */,
+			);
+			path = "ThePrince-of-TabletennisTests";
+			sourceTree = "<group>";
+		};
+		D354E7BA1D0063F20066A718 /* ThePrince-of-TabletennisUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D354E7BB1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift */,
+				D354E7BD1D0063F20066A718 /* Info.plist */,
+			);
+			path = "ThePrince-of-TabletennisUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D354E7931D0063F10066A718 /* ThePrince-of-Tabletennis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D354E7C01D0063F20066A718 /* Build configuration list for PBXNativeTarget "ThePrince-of-Tabletennis" */;
+			buildPhases = (
+				D354E7901D0063F10066A718 /* Sources */,
+				D354E7911D0063F10066A718 /* Frameworks */,
+				D354E7921D0063F10066A718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ThePrince-of-Tabletennis";
+			productName = "ThePrince-of-Tabletennis";
+			productReference = D354E7941D0063F10066A718 /* ThePrince-of-Tabletennis.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D354E7AB1D0063F20066A718 /* ThePrince-of-TabletennisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D354E7C31D0063F20066A718 /* Build configuration list for PBXNativeTarget "ThePrince-of-TabletennisTests" */;
+			buildPhases = (
+				D354E7A81D0063F20066A718 /* Sources */,
+				D354E7A91D0063F20066A718 /* Frameworks */,
+				D354E7AA1D0063F20066A718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D354E7AE1D0063F20066A718 /* PBXTargetDependency */,
+			);
+			name = "ThePrince-of-TabletennisTests";
+			productName = "ThePrince-of-TabletennisTests";
+			productReference = D354E7AC1D0063F20066A718 /* ThePrince-of-TabletennisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D354E7B61D0063F20066A718 /* ThePrince-of-TabletennisUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D354E7C61D0063F20066A718 /* Build configuration list for PBXNativeTarget "ThePrince-of-TabletennisUITests" */;
+			buildPhases = (
+				D354E7B31D0063F20066A718 /* Sources */,
+				D354E7B41D0063F20066A718 /* Frameworks */,
+				D354E7B51D0063F20066A718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D354E7B91D0063F20066A718 /* PBXTargetDependency */,
+			);
+			name = "ThePrince-of-TabletennisUITests";
+			productName = "ThePrince-of-TabletennisUITests";
+			productReference = D354E7B71D0063F20066A718 /* ThePrince-of-TabletennisUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D354E78C1D0063F10066A718 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = mr.small;
+				TargetAttributes = {
+					D354E7931D0063F10066A718 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					D354E7AB1D0063F20066A718 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D354E7931D0063F10066A718;
+					};
+					D354E7B61D0063F20066A718 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D354E7931D0063F10066A718;
+					};
+				};
+			};
+			buildConfigurationList = D354E78F1D0063F10066A718 /* Build configuration list for PBXProject "ThePrince-of-Tabletennis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D354E78B1D0063F10066A718;
+			productRefGroup = D354E7951D0063F10066A718 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D354E7931D0063F10066A718 /* ThePrince-of-Tabletennis */,
+				D354E7AB1D0063F20066A718 /* ThePrince-of-TabletennisTests */,
+				D354E7B61D0063F20066A718 /* ThePrince-of-TabletennisUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D354E7921D0063F10066A718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D354E7A61D0063F10066A718 /* LaunchScreen.storyboard in Resources */,
+				D354E7A31D0063F10066A718 /* Assets.xcassets in Resources */,
+				D354E7A11D0063F10066A718 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D354E7AA1D0063F20066A718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D354E7B51D0063F20066A718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D354E7901D0063F10066A718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D354E79C1D0063F10066A718 /* GameScene.swift in Sources */,
+				D354E79E1D0063F10066A718 /* GameViewController.swift in Sources */,
+				D354E7981D0063F10066A718 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D354E7A81D0063F20066A718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D354E7B11D0063F20066A718 /* ThePrince_of_TabletennisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D354E7B31D0063F20066A718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D354E7BC1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D354E7AE1D0063F20066A718 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D354E7931D0063F10066A718 /* ThePrince-of-Tabletennis */;
+			targetProxy = D354E7AD1D0063F20066A718 /* PBXContainerItemProxy */;
+		};
+		D354E7B91D0063F20066A718 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D354E7931D0063F10066A718 /* ThePrince-of-Tabletennis */;
+			targetProxy = D354E7B81D0063F20066A718 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D354E79F1D0063F10066A718 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D354E7A01D0063F10066A718 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D354E7A41D0063F10066A718 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D354E7A51D0063F10066A718 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D354E7BE1D0063F20066A718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D354E7BF1D0063F20066A718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D354E7C11D0063F20066A718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ThePrince-of-Tabletennis/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mr.small.ThePrince-of-Tabletennis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D354E7C21D0063F20066A718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ThePrince-of-Tabletennis/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mr.small.ThePrince-of-Tabletennis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D354E7C41D0063F20066A718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "ThePrince-of-TabletennisTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mr.small.ThePrince-of-TabletennisTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThePrince-of-Tabletennis.app/ThePrince-of-Tabletennis";
+			};
+			name = Debug;
+		};
+		D354E7C51D0063F20066A718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "ThePrince-of-TabletennisTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mr.small.ThePrince-of-TabletennisTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThePrince-of-Tabletennis.app/ThePrince-of-Tabletennis";
+			};
+			name = Release;
+		};
+		D354E7C71D0063F20066A718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "ThePrince-of-TabletennisUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mr.small.ThePrince-of-TabletennisUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "ThePrince-of-Tabletennis";
+			};
+			name = Debug;
+		};
+		D354E7C81D0063F20066A718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "ThePrince-of-TabletennisUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mr.small.ThePrince-of-TabletennisUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "ThePrince-of-Tabletennis";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D354E78F1D0063F10066A718 /* Build configuration list for PBXProject "ThePrince-of-Tabletennis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D354E7BE1D0063F20066A718 /* Debug */,
+				D354E7BF1D0063F20066A718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D354E7C01D0063F20066A718 /* Build configuration list for PBXNativeTarget "ThePrince-of-Tabletennis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D354E7C11D0063F20066A718 /* Debug */,
+				D354E7C21D0063F20066A718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D354E7C31D0063F20066A718 /* Build configuration list for PBXNativeTarget "ThePrince-of-TabletennisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D354E7C41D0063F20066A718 /* Debug */,
+				D354E7C51D0063F20066A718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D354E7C61D0063F20066A718 /* Build configuration list for PBXNativeTarget "ThePrince-of-TabletennisUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D354E7C71D0063F20066A718 /* Debug */,
+				D354E7C81D0063F20066A718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D354E78C1D0063F10066A718 /* Project object */;
+}
