@@ -20,6 +20,7 @@ class GameViewController: UIViewController {
         
         // Initialize game scene.
         scene = GameScene(size: skView.bounds.size)
+        scene.scaleMode = .Fill // for landscape
         skView.presentScene(scene)
         
     }

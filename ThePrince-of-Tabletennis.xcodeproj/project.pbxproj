@@ -17,6 +17,9 @@
 		D354E7BC1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354E7BB1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift */; };
 		D373DB271D03311D008A4165 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = D373DB251D03311D008A4165 /* ball.png */; };
 		D373DB281D03311D008A4165 /* racket.png in Resources */ = {isa = PBXBuildFile; fileRef = D373DB261D03311D008A4165 /* racket.png */; };
+		D394A3951D04722D0016868F /* UILayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394A3941D04722D0016868F /* UILayerView.swift */; };
+		D394A3961D04722D0016868F /* UILayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394A3941D04722D0016868F /* UILayerView.swift */; };
+		D394A3971D04722D0016868F /* UILayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394A3941D04722D0016868F /* UILayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 		D354E7BD1D0063F20066A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D373DB251D03311D008A4165 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = res/ball.png; sourceTree = "<group>"; };
 		D373DB261D03311D008A4165 /* racket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = racket.png; path = res/racket.png; sourceTree = "<group>"; };
+		D394A3941D04722D0016868F /* UILayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				D354E7A21D0063F10066A718 /* Assets.xcassets */,
 				D354E7A41D0063F10066A718 /* LaunchScreen.storyboard */,
 				D354E7A71D0063F10066A718 /* Info.plist */,
+				D394A3941D04722D0016868F /* UILayerView.swift */,
 			);
 			path = "ThePrince-of-Tabletennis";
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 			files = (
 				D354E79C1D0063F10066A718 /* GameScene.swift in Sources */,
 				D354E79E1D0063F10066A718 /* GameViewController.swift in Sources */,
+				D394A3951D04722D0016868F /* UILayerView.swift in Sources */,
 				D354E7981D0063F10066A718 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D394A3961D04722D0016868F /* UILayerView.swift in Sources */,
 				D354E7B11D0063F20066A718 /* ThePrince_of_TabletennisTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D394A3971D04722D0016868F /* UILayerView.swift in Sources */,
 				D354E7BC1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

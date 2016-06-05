@@ -15,10 +15,16 @@ class GameScene: SKScene {
         fatalError("NSCoder not supported")
     }
     
+    // Initialize.
     override init(size: CGSize) {
         super.init(size: size)
-        drawBackground()
-        drawRacket()
+    }
+    
+    // Set up UI layer component.
+    private func setUiLayer() {
+        let uiLayerView = UILayerView(frame: self.view!.frame)
+        uiLayerView.setup()
+        self.view!.addSubview(uiLayerView)
     }
     
     // Draw background color.
@@ -31,16 +37,25 @@ class GameScene: SKScene {
     // Draw racket image.
     private func drawRacket() {
         let image = SKSpriteNode(imageNamed: "racket.png")
-        image.size = self.size
-        image.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2)
+        image.size.width *= 0.3
+        image.size.height *= 0.3
+        image.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 3)
         self.addChild(image)
     }
     
     override func didMoveToView(view: SKView) {
+        drawBackground()
+        drawRacket()
+        
+        setUiLayer()
     }
     
+    // Called when a touch begins.
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
+        for touch: AnyObject in touches {
+            let location = touch.locationInNode(self)
+            print(location)
+        }
     }
    
     override func update(currentTime: CFTimeInterval) {
