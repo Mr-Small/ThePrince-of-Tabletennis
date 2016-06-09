@@ -30,11 +30,34 @@ class UILayerView : UIView {
     // Set up ui component.
     func setup() {
         addBackButton()
+        addLabels()
+    }
+    
+    // Draw labels.
+    private func addLabels() {
+        var posx = frame.width * 0.6
+        var posy = frame.height * 0.05
+        
+        // Score:
+        let score = UILabel(frame: CGRectMake(0, 0, 200, 50))
+        score.text = "Score : "
+        score.textColor = UIColor.whiteColor()
+        score.layer.position = CGPoint(x: posx, y: posy)
+        self.addSubview(score)
+       
+        posx = frame.width * 0.9
+        posy = frame.height * 0.05
+        // Time:
+        let time = UILabel(frame: CGRectMake(0, 0, 200, 50))
+        time.text = "Time : "
+        time.textColor = UIColor.whiteColor()
+        time.layer.position = CGPoint(x: posx, y: posy)
+        self.addSubview(time)
     }
     
     // Add back button.
     private func addBackButton() {
-        let posx = frame.width * 0.2
+        let posx = frame.width * 0.15
         let posy = frame.height * 0.05
         
         let button = UIButton()
