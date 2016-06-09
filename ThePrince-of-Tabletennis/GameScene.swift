@@ -44,10 +44,26 @@ class GameScene: SKScene {
     }
     
     override func didMoveToView(view: SKView) {
+        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+        
         drawBackground()
         drawRacket()
         
         setUiLayer()
+    }
+    
+    private func addBall(location: CGPoint) {
+        let ball = SKSpriteNode(imageNamed: "ball.png")
+        
+        let width = ball.size.width * 0.1
+        let height = ball.size.height * 0.1
+        
+        ball.size.width = width
+        ball.size.height = height
+        ball.position = location
+        ball.physicsBody = SKPhysicsBody(circleOfRadius: width)
+        ball.physicsBody?.dynamic = true
+        self.addChild(ball)
     }
     
     // Called when a touch begins.
@@ -55,6 +71,7 @@ class GameScene: SKScene {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             print(location)
+            addBall(location)
         }
     }
    
