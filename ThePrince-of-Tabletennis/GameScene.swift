@@ -40,11 +40,14 @@ class GameScene: SKScene {
         image.size.width *= 0.3
         image.size.height *= 0.3
         image.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 3)
+        image.physicsBody = SKPhysicsBody(rectangleOfSize: image.size)
+        image.name = "racket"
         self.addChild(image)
     }
     
     override func didMoveToView(view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+        self.physicsWorld.gravity = CGVectorMake(0.0, -5.0)
         
         drawBackground()
         drawRacket()
@@ -70,8 +73,20 @@ class GameScene: SKScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
-            print(location)
-            addBall(location)
+            
+            var isRacket = false
+            for r in self.children {
+                if r.name == "racket" {
+                    if r.containsPoint(location) {
+                        print(location)
+                        r.physicsBody?.applyImpulse(CGVectorMake(0, 1000))
+                        isRacket = true
+                    }
+                }
+            }
+            if !isRacket {
+                addBall(location)
+            }
         }
     }
    
