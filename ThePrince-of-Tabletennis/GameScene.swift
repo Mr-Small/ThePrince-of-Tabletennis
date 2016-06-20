@@ -29,8 +29,10 @@ class GameScene: SKScene {
     
     // Draw background color.
     private func drawBackground() {
-        let box = SKSpriteNode(color: SKColor.blueColor(), size: self.size)
+        //let box = SKSpriteNode(color: SKColor.blueColor(), size: self.size)
+        let box = SKSpriteNode(imageNamed: "background.png")
         box.position = CGPointMake(self.size.width / 2, self.size.height / 2)
+        box.size = self.size
         self.addChild(box)
     }
     
