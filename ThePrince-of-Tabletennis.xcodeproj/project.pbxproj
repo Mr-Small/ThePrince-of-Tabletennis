@@ -15,8 +15,6 @@
 		D354E7A61D0063F10066A718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D354E7A41D0063F10066A718 /* LaunchScreen.storyboard */; };
 		D354E7B11D0063F20066A718 /* ThePrince_of_TabletennisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354E7B01D0063F20066A718 /* ThePrince_of_TabletennisTests.swift */; };
 		D354E7BC1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354E7BB1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift */; };
-		D373DB271D03311D008A4165 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = D373DB251D03311D008A4165 /* ball.png */; };
-		D373DB281D03311D008A4165 /* racket.png in Resources */ = {isa = PBXBuildFile; fileRef = D373DB261D03311D008A4165 /* racket.png */; };
 		D394A3951D04722D0016868F /* UILayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394A3941D04722D0016868F /* UILayerView.swift */; };
 		D394A3961D04722D0016868F /* UILayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394A3941D04722D0016868F /* UILayerView.swift */; };
 		D394A3971D04722D0016868F /* UILayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394A3941D04722D0016868F /* UILayerView.swift */; };
@@ -54,8 +52,6 @@
 		D354E7B71D0063F20066A718 /* ThePrince-of-TabletennisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ThePrince-of-TabletennisUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D354E7BB1D0063F20066A718 /* ThePrince_of_TabletennisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThePrince_of_TabletennisUITests.swift; sourceTree = "<group>"; };
 		D354E7BD1D0063F20066A718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D373DB251D03311D008A4165 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = res/ball.png; sourceTree = "<group>"; };
-		D373DB261D03311D008A4165 /* racket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = racket.png; path = res/racket.png; sourceTree = "<group>"; };
 		D394A3941D04722D0016868F /* UILayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +103,6 @@
 		D354E7961D0063F10066A718 /* ThePrince-of-Tabletennis */ = {
 			isa = PBXGroup;
 			children = (
-				D373DB241D03310B008A4165 /* res */,
 				D354E7971D0063F10066A718 /* AppDelegate.swift */,
 				D354E79B1D0063F10066A718 /* GameScene.swift */,
 				D354E79D1D0063F10066A718 /* GameViewController.swift */,
@@ -136,15 +131,6 @@
 				D354E7BD1D0063F20066A718 /* Info.plist */,
 			);
 			path = "ThePrince-of-TabletennisUITests";
-			sourceTree = "<group>";
-		};
-		D373DB241D03310B008A4165 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D373DB251D03311D008A4165 /* ball.png */,
-				D373DB261D03311D008A4165 /* racket.png */,
-			);
-			name = res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +237,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D373DB281D03311D008A4165 /* racket.png in Resources */,
 				D354E7A61D0063F10066A718 /* LaunchScreen.storyboard in Resources */,
 				D354E7A31D0063F10066A718 /* Assets.xcassets in Resources */,
-				D373DB271D03311D008A4165 /* ball.png in Resources */,
 				D354E7A11D0063F10066A718 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
