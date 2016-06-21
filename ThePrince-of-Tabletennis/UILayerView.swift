@@ -35,24 +35,39 @@ class UILayerView : UIView {
     
     // Draw labels.
     private func addLabels() {
-        var posx = frame.width * 0.6
+        var posx = frame.width * 0.45
         var posy = frame.height * 0.05
         
         // Score:
-        let score = UILabel(frame: CGRectMake(0, 0, 200, 50))
+        let score = UILabel(frame: CGRectMake(0, 0, 100, 50))
         score.text = "Score : "
         score.textColor = UIColor.whiteColor()
         score.layer.position = CGPoint(x: posx, y: posy)
         self.addSubview(score)
+        // Point
+        let scorePoint = UILabel(frame: CGRectMake(0, 0, 100, 50))
+        scorePoint.text = "0"
+        scorePoint.textColor = UIColor.whiteColor()
+        scorePoint.textAlignment = NSTextAlignment.Right
+        scorePoint.layer.position = CGPoint(x: posx + 5, y: posy)
+        self.addSubview(scorePoint)
+        
        
-        posx = frame.width * 0.9
+        posx = frame.width * 0.8
         posy = frame.height * 0.05
         // Time:
-        let time = UILabel(frame: CGRectMake(0, 0, 200, 50))
+        let time = UILabel(frame: CGRectMake(0, 0, 100, 50))
         time.text = "Time : "
         time.textColor = UIColor.whiteColor()
         time.layer.position = CGPoint(x: posx, y: posy)
         self.addSubview(time)
+        // Count
+        let timeCount = UILabel(frame: CGRectMake(0, 0, 100, 50))
+        timeCount.text = "0"
+        timeCount.textColor = UIColor.whiteColor()
+        timeCount.textAlignment = NSTextAlignment.Right
+        timeCount.layer.position = CGPoint(x: posx + 5, y: posy)
+        self.addSubview(timeCount)
     }
     
     // Add back button.
