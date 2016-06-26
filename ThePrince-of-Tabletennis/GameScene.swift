@@ -8,7 +8,11 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    var initPostision: CGPoint?
+    let CATEGORY_RACKET: UInt32 = 0x00000001
+    let CATEGORY_BALL: UInt32 = 0x00000010
     
     // not supported construct.
     required init(coder aDecoder: NSCoder) {
@@ -38,16 +42,22 @@ class GameScene: SKScene {
     
     // Draw racket image.
     private func drawRacket() {
+        // Set first position.
+        initPostision = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 5)
         let image = SKSpriteNode(imageNamed: "racket.png")
         image.size.width *= 0.3
         image.size.height *= 0.3
-        image.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 3)
-        image.physicsBody = SKPhysicsBody(rectangleOfSize: image.size)
+        image.position = initPostision!
+        image.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(image.size.width / 2, image.size.height / 2))
+        image.physicsBody?.dynamic = false
+        image.physicsBody?.categoryBitMask = CATEGORY_RACKET
+        image.physicsBody?.contactTestBitMask = CATEGORY_BALL
         image.name = "racket"
         self.addChild(image)
     }
     
     override func didMoveToView(view: SKView) {
+        self.physicsWorld.contactDelegate = self
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         self.physicsWorld.gravity = CGVectorMake(0.0, -5.0)
         
@@ -68,6 +78,8 @@ class GameScene: SKScene {
         ball.position = location
         ball.physicsBody = SKPhysicsBody(circleOfRadius: width)
         ball.physicsBody?.dynamic = true
+        ball.physicsBody?.categoryBitMask = CATEGORY_BALL
+        ball.physicsBody?.contactTestBitMask = CATEGORY_RACKET
         self.addChild(ball)
     }
     
@@ -79,9 +91,10 @@ class GameScene: SKScene {
             var isRacket = false
             for r in self.children {
                 if r.name == "racket" {
-                    if r.containsPoint(location) {
-                        print(location)
-                        r.physicsBody?.applyImpulse(CGVectorMake(0, 1000))
+                    if location.y < ((self.size.height * 2) / 3) {
+                        let seq = SKAction.sequence([SKAction.moveTo(location, duration: 0.25),
+                            SKAction.moveTo(initPostision!, duration: 0.5)])
+                        r.runAction(seq)
                         isRacket = true
                     }
                 }
@@ -92,6 +105,10 @@ class GameScene: SKScene {
         }
     }
    
+    func didBeginContact(contact: SKPhysicsContact) {
+        print("didBeginContact")
+    }
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
