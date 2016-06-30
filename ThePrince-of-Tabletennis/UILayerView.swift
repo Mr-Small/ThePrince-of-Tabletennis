@@ -18,8 +18,17 @@ class UILayerView : UIView {
     // Declare function for click back button.
     let BUTTON_BACK_FUNCTION: Selector = #selector(UILayerView.onClickBack(_:))
     
+    var score: Int
+    var time: Int
+    
+    var scorePoint: UILabel?
+    var timeCount: UILabel?
+    
     // Initialize.
     override init(frame: CGRect) {
+        
+        time = 0
+        score = 0
         super.init(frame: frame)
     }
     
@@ -31,6 +40,21 @@ class UILayerView : UIView {
     func setup() {
         addBackButton()
         addLabels()
+        
+        // Start count timer.
+        NSTimer.scheduledTimerWithTimeInterval(
+            1.0, target: self, selector: #selector(UILayerView.countup), userInfo: nil, repeats: true)
+    }
+    
+    // Point up.
+    func pointup(point: Int) {
+        score += point
+        scorePoint!.text = String(score)
+    }
+    
+    func countup() {
+        time += 1
+        timeCount!.text = String(time)
     }
     
     // Draw labels.
@@ -45,12 +69,12 @@ class UILayerView : UIView {
         score.layer.position = CGPoint(x: posx, y: posy)
         self.addSubview(score)
         // Point
-        let scorePoint = UILabel(frame: CGRectMake(0, 0, 100, 50))
-        scorePoint.text = "0"
-        scorePoint.textColor = UIColor.whiteColor()
-        scorePoint.textAlignment = NSTextAlignment.Right
-        scorePoint.layer.position = CGPoint(x: posx + 5, y: posy)
-        self.addSubview(scorePoint)
+        scorePoint = UILabel(frame: CGRectMake(0, 0, 100, 50))
+        scorePoint!.text = "0"
+        scorePoint!.textColor = UIColor.whiteColor()
+        scorePoint!.textAlignment = NSTextAlignment.Right
+        scorePoint!.layer.position = CGPoint(x: posx + 5, y: posy)
+        self.addSubview(scorePoint!)
         
        
         posx = frame.width * 0.8
@@ -62,12 +86,12 @@ class UILayerView : UIView {
         time.layer.position = CGPoint(x: posx, y: posy)
         self.addSubview(time)
         // Count
-        let timeCount = UILabel(frame: CGRectMake(0, 0, 100, 50))
-        timeCount.text = "0"
-        timeCount.textColor = UIColor.whiteColor()
-        timeCount.textAlignment = NSTextAlignment.Right
-        timeCount.layer.position = CGPoint(x: posx + 5, y: posy)
-        self.addSubview(timeCount)
+        timeCount = UILabel(frame: CGRectMake(0, 0, 100, 50))
+        timeCount!.text = "0"
+        timeCount!.textColor = UIColor.whiteColor()
+        timeCount!.textAlignment = NSTextAlignment.Right
+        timeCount!.layer.position = CGPoint(x: posx + 5, y: posy)
+        self.addSubview(timeCount!)
     }
     
     // Add back button.

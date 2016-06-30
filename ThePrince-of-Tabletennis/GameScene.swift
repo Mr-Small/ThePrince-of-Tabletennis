@@ -11,6 +11,8 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var initPostision: CGPoint?
+    var uiLayerView: UILayerView?
+    
     let CATEGORY_RACKET: UInt32 = 0x00000001
     let CATEGORY_BALL: UInt32 = 0x00000010
     
@@ -26,9 +28,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Set up UI layer component.
     private func setUiLayer() {
-        let uiLayerView = UILayerView(frame: self.view!.frame)
-        uiLayerView.setup()
-        self.view!.addSubview(uiLayerView)
+        uiLayerView = UILayerView(frame: self.view!.frame)
+        uiLayerView!.setup()
+        self.view!.addSubview(uiLayerView!)
     }
     
     // Draw background color.
@@ -107,6 +109,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
    
     func didBeginContact(contact: SKPhysicsContact) {
         print("didBeginContact")
+        uiLayerView!.pointup(1) // TODO fix point value.
     }
     
     override func update(currentTime: CFTimeInterval) {
