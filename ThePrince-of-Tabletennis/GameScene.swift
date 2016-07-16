@@ -8,10 +8,19 @@
 
 import SpriteKit
 
+// Sequence during game.
+public enum GameSequence {
+    case TITLE
+    case COUNT
+    case GAME
+    case SCORE
+}
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var initPostision: CGPoint?
     var uiLayerView: UILayerView?
+    var sequence: GameSequence = .TITLE
     
     let CATEGORY_RACKET: UInt32 = 0x00000001
     let CATEGORY_BALL: UInt32 = 0x00000010
@@ -64,9 +73,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.gravity = CGVectorMake(0.0, -5.0)
         
         drawBackground()
-        drawRacket()
-        
-        setUiLayer()
     }
     
     private func addBall(location: CGPoint) {
@@ -87,6 +93,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Called when a touch begins.
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        // Touch in title sequence.
+        if self.sequence == .TITLE {
+            self.sequence = .COUNT
+            countDown()
+            return
+        }
+        
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             
@@ -107,6 +120,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
    
+    func countDown() {
+        // TODO 3..2..1..
+        
+        // Change sequence to game.
+        self.sequence = .GAME
+        drawRacket()
+        setUiLayer()
+    }
+    
     func didBeginContact(contact: SKPhysicsContact) {
         print("didBeginContact")
         uiLayerView!.pointup(1) // TODO fix point value.
