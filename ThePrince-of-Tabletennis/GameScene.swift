@@ -21,6 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var initPostision: CGPoint?
     var uiLayerView: UILayerView?
     var sequence: GameSequence = .TITLE
+    var counter: SKLabelNode!
     
     let CATEGORY_RACKET: UInt32 = 0x00000001
     let CATEGORY_BALL: UInt32 = 0x00000010
@@ -120,13 +121,41 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
    
-    func countDown() {
-        // TODO 3..2..1..
+    func addCounter() {
+        let posx = self.frame.width / 2
+        let posy = self.frame.height / 2
         
-        // Change sequence to game.
-        self.sequence = .GAME
-        drawRacket()
-        setUiLayer()
+        counter = SKLabelNode(fontNamed: "Courier")
+        counter.text = "3"
+        counter.fontColor = UIColor.redColor()
+        counter.fontSize = 100;
+        counter.position = CGPointMake(posx, posy)
+        self.addChild(counter)
+    }
+    
+    func countDown() {
+        // Count down 3..2..1..
+        addCounter()
+        
+        let fadeOut: SKAction = SKAction.fadeOutWithDuration(0.8)
+        let chg2: SKAction = SKAction.customActionWithDuration(0.1,
+          actionBlock: {(SKNode, CGFloat) in
+            self.counter.alpha = 1.0
+            self.counter.text = "2"
+        })
+        let chg1: SKAction = SKAction.customActionWithDuration(0.1,
+          actionBlock: {(SKNode, CGFloat) in
+            self.counter.alpha = 1.0
+            self.counter.text = "1"
+        })
+        
+        let seq: SKAction = SKAction.sequence([fadeOut, chg2, fadeOut, chg1, fadeOut])
+        counter.runAction(seq, completion: {
+            self.counter.text = ""
+            self.sequence = .GAME
+            self.drawRacket()
+            self.setUiLayer()
+        })
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
