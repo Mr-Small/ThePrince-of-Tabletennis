@@ -25,6 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let CATEGORY_RACKET: UInt32 = 0x00000001
     let CATEGORY_BALL: UInt32 = 0x00000010
+    let CATEGORY_ROUND: UInt32 = 0x00000100
     
     // not supported construct.
     required init(coder aDecoder: NSCoder) {
@@ -72,6 +73,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         self.physicsWorld.gravity = CGVectorMake(0.0, -5.0)
+        self.physicsBody?.categoryBitMask = CATEGORY_ROUND
+        self.physicsBody?.contactTestBitMask = CATEGORY_BALL
         
         drawBackground()
     }
@@ -88,7 +91,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball.physicsBody = SKPhysicsBody(circleOfRadius: width)
         ball.physicsBody?.dynamic = true
         ball.physicsBody?.categoryBitMask = CATEGORY_BALL
-        ball.physicsBody?.contactTestBitMask = CATEGORY_RACKET
+        ball.physicsBody?.contactTestBitMask = CATEGORY_RACKET | CATEGORY_ROUND
         self.addChild(ball)
     }
     
@@ -104,19 +107,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             
-            var isRacket = false
             for r in self.children {
                 if r.name == "racket" {
                     if location.y < ((self.size.height * 2) / 3) {
                         let seq = SKAction.sequence([SKAction.moveTo(location, duration: 0.25),
                             SKAction.moveTo(initPostision!, duration: 0.5)])
                         r.runAction(seq)
-                        isRacket = true
                     }
                 }
-            }
-            if !isRacket {
-                addBall(location)
             }
         }
     }
@@ -155,12 +153,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.sequence = .GAME
             self.drawRacket()
             self.setUiLayer()
+            self.addBall(CGPointMake(self.frame.width / 2, self.frame.height - 10))
         })
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        print("didBeginContact")
-        uiLayerView!.pointup(1) // TODO fix point value.
+        
+        let mask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        if mask == (CATEGORY_RACKET | CATEGORY_BALL) {
+            uiLayerView!.pointup(1) // TODO fix point value.
+        } else if mask == (CATEGORY_ROUND | CATEGORY_BALL) {
+            print("finish")
+        }
+        
     }
     
     override func update(currentTime: CFTimeInterval) {
