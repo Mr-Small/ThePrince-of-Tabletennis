@@ -109,11 +109,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             for r in self.children {
                 if r.name == "racket" {
-                    if location.y < ((self.size.height * 2) / 3) {
-                        let seq = SKAction.sequence([SKAction.moveTo(location, duration: 0.25),
-                            SKAction.moveTo(initPostision!, duration: 0.5)])
+                    //if location.y < ((self.size.height * 2) / 3) {
+                        let seq = SKAction.sequence([SKAction.moveTo(location, duration: 0.15),
+                            SKAction.moveTo(initPostision!, duration: 0.4)])
                         r.runAction(seq)
-                    }
+                    //}
                 }
             }
         }
