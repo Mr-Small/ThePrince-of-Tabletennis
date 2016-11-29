@@ -10,17 +10,17 @@ import SpriteKit
 
 // Sequence during game.
 public enum GameSequence {
-    case TITLE
-    case COUNT
-    case GAME
-    case SCORE
+    case title
+    case count
+    case game
+    case score
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var initPostision: CGPoint?
     var uiLayerView: UILayerView?
-    var sequence: GameSequence = .TITLE
+    var sequence: GameSequence = .title
     var counter: SKLabelNode!
     
     let CATEGORY_RACKET: UInt32 = 0x00000001
@@ -38,48 +38,48 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     // Set up UI layer component.
-    private func setUiLayer() {
+    fileprivate func setUiLayer() {
         uiLayerView = UILayerView(frame: self.view!.frame)
         uiLayerView!.setup()
         self.view!.addSubview(uiLayerView!)
     }
     
     // Draw background color.
-    private func drawBackground() {
+    fileprivate func drawBackground() {
         //let box = SKSpriteNode(color: SKColor.blueColor(), size: self.size)
         let box = SKSpriteNode(imageNamed: "background.png")
-        box.position = CGPointMake(self.size.width / 2, self.size.height / 2)
+        box.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         box.size = self.size
         self.addChild(box)
     }
     
     // Draw racket image.
-    private func drawRacket() {
+    fileprivate func drawRacket() {
         // Set first position.
-        initPostision = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 5)
+        initPostision = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 5)
         let image = SKSpriteNode(imageNamed: "racket.png")
         image.size.width *= 0.3
         image.size.height *= 0.3
         image.position = initPostision!
-        image.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(image.size.width / 2, image.size.height / 2))
-        image.physicsBody?.dynamic = false
+        image.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: image.size.width / 2, height: image.size.height / 2))
+        image.physicsBody?.isDynamic = false
         image.physicsBody?.categoryBitMask = CATEGORY_RACKET
         image.physicsBody?.contactTestBitMask = CATEGORY_BALL
         image.name = "racket"
         self.addChild(image)
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         self.physicsWorld.contactDelegate = self
-        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
-        self.physicsWorld.gravity = CGVectorMake(0.0, -5.0)
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        self.physicsWorld.gravity = CGVector(dx: 0.0, dy: -5.0)
         self.physicsBody?.categoryBitMask = CATEGORY_ROUND
         self.physicsBody?.contactTestBitMask = CATEGORY_BALL
         
         drawBackground()
     }
     
-    private func addBall(location: CGPoint) {
+    fileprivate func addBall(_ location: CGPoint) {
         let ball = SKSpriteNode(imageNamed: "ball.png")
         
         let width = ball.size.width * 0.1
@@ -89,30 +89,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball.size.height = height
         ball.position = location
         ball.physicsBody = SKPhysicsBody(circleOfRadius: width)
-        ball.physicsBody?.dynamic = true
+        ball.physicsBody?.isDynamic = true
         ball.physicsBody?.categoryBitMask = CATEGORY_BALL
         ball.physicsBody?.contactTestBitMask = CATEGORY_RACKET | CATEGORY_ROUND
         self.addChild(ball)
     }
     
     // Called when a touch begins.
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // Touch in title sequence.
-        if self.sequence == .TITLE {
-            self.sequence = .COUNT
+        if self.sequence == .title {
+            self.sequence = .count
             countDown()
             return
         }
         
         for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             
             for r in self.children {
                 if r.name == "racket" {
                     //if location.y < ((self.size.height * 2) / 3) {
-                        let seq = SKAction.sequence([SKAction.moveTo(location, duration: 0.15),
-                            SKAction.moveTo(initPostision!, duration: 0.4)])
-                        r.runAction(seq)
+                        let seq = SKAction.sequence([SKAction.move(to: location, duration: 0.15),
+                            SKAction.move(to: initPostision!, duration: 0.4)])
+                        r.run(seq)
                     //}
                 }
             }
@@ -125,9 +125,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         counter = SKLabelNode(fontNamed: "Courier")
         counter.text = "3"
-        counter.fontColor = UIColor.redColor()
+        counter.fontColor = UIColor.red
         counter.fontSize = 100;
-        counter.position = CGPointMake(posx, posy)
+        counter.position = CGPoint(x: posx, y: posy)
         self.addChild(counter)
     }
     
@@ -135,29 +135,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Count down 3..2..1..
         addCounter()
         
-        let fadeOut: SKAction = SKAction.fadeOutWithDuration(0.8)
-        let chg2: SKAction = SKAction.customActionWithDuration(0.1,
+        let fadeOut: SKAction = SKAction.fadeOut(withDuration: 0.8)
+        let chg2: SKAction = SKAction.customAction(withDuration: 0.1,
           actionBlock: {(SKNode, CGFloat) in
             self.counter.alpha = 1.0
             self.counter.text = "2"
         })
-        let chg1: SKAction = SKAction.customActionWithDuration(0.1,
+        let chg1: SKAction = SKAction.customAction(withDuration: 0.1,
           actionBlock: {(SKNode, CGFloat) in
             self.counter.alpha = 1.0
             self.counter.text = "1"
         })
         
         let seq: SKAction = SKAction.sequence([fadeOut, chg2, fadeOut, chg1, fadeOut])
-        counter.runAction(seq, completion: {
+        counter.run(seq, completion: {
             self.counter.text = ""
-            self.sequence = .GAME
+            self.sequence = .game
             self.drawRacket()
             self.setUiLayer()
-            self.addBall(CGPointMake(self.frame.width / 2, self.frame.height - 10))
+            self.addBall(CGPoint(x: self.frame.width / 2, y: self.frame.height - 10))
         })
     }
     
-    func didBeginContact(contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
         
         let mask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         if mask == (CATEGORY_RACKET | CATEGORY_BALL) {
@@ -168,7 +168,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
     }
 }
